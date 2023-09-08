@@ -1,10 +1,14 @@
 import React from "react";
 import "./ServiceStyles.css";
+
 const Service = () => {
   return (
     <div id='service'>
       <div className='service-left-grid'>
-        <img src='../../src/assets/imgLaptop.png' alt='service' />
+        <img
+          src='https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=400'
+          alt='service'
+        />
       </div>
       <div className='service-right-grid'>
         <div className='service-headers'>

@@ -1,65 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "animate.css";
 import "./ReferenceStyles.css";
 import { motion } from "framer-motion";
-import ScrollCarousel from "scroll-carousel";
+import { gegevens } from "../Data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAlignLeft,
+  faHandsHoldingCircle,
+  faLeftLong,
+  faRightLong,
+} from "@fortawesome/free-solid-svg-icons";
+
 const Reference = () => {
+  //slider
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const previous = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? gegevens.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+  const next = () => {
+    const isLastSlider = currentIndex === gegevens.length - 1;
+    const newIndex = isLastSlider ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      next();
+    }, 4000);
+
+    // Stop het interval wanneer de component wordt ge-unmount
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [currentIndex]);
   return (
-    <motion.div
-      id='reference'
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.4 }}
-    >
-      <div className='reference-left-grid'>
-        <img
-          src='https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=400'
-          alt='reference'
-        />
+    <div id='reference'>
+      <h3 style={{ textAlign: "center" }}>Referenties</h3>
+      <div className='slider-container'>
+        <button onClick={previous} id='prev'>
+          <FontAwesomeIcon icon={faLeftLong} style={{ color: "#5680c8" }} />
+        </button>
+        <div className='card'>
+          <img src={gegevens[currentIndex].img} alt='' />
+          <div className='card-text'>
+            <p>{gegevens[currentIndex].text}</p>
+          </div>
+          <div className='card-person-name'>
+            <p>{gegevens[currentIndex].personName}</p>
+          </div>
+        </div>
+
+        <button onClick={next} id='next'>
+          <FontAwesomeIcon icon={faRightLong} style={{ color: "#5680c8" }} />
+        </button>
       </div>
-      <div className='reference-right-grid'>
-        <div className='reference-headers'>
-          <h3 className='animate__animated animate__flash'>
-            Wat Onze Klanten Zeggen
-          </h3>
-        </div>
-        <div className='reference-right-grid-text-holder'>
-          <p>
-            Bij Nexa bieden we een breed scala aan diensten om aan al uw
-            digitale behoeften te voldoen. Of u nu op zoek bent naar krachtige
-            .NET-oplossingen, boeiende ReactJs-websites, responsief ontwerp of
-            een klantgerichte benadering, ons toegewijde team van professionals
-            staat klaar om uw visie tot leven te brengen. Uw succes is onze
-            prioriteit, en we streven ernaar om de best mogelijke resultaten te
-            leveren voor uw project. Neem vandaag nog contact met ons op om te
-            ontdekken hoe we uw online doelen kunnen verwezenlijken.
-          </p>
-        </div>
-        <div className='reference-right-grid-button-holder'>
-          <button>read more</button>
-        </div>
-      </div>
-    </motion.div>
+    </div>
   );
 };
 
 export default Reference;
-{
-  /* <div>
-        <div className='reference-right-grid'>
-          <img src='../../src/assets/personImg.png' alt='happy person' />
-        </div>
-      </div>
-      <img
-        src='../../src/assets/vector2.png'
-        alt=''
-        className='reference-vector-2'
-      />
-      <img
-        src='../../src/assets/vector3.png'
-        alt=''
-        className='reference-vector-3'
-      />
-    </div> */
-}
