@@ -1,0 +1,33 @@
+#Hero {
+	max-width: 1240px;
+	width: 90%;
+	margin: 0 auto;
+	height: 600px;
+	margin-top: 15px;
+	background-image: url('../assets/Hero.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+}
+
+#vector-image img:nth-last-child(1) {
+	transform: rotate(180deg);
+	margin-left: -70px;
+	margin-top: -10px;
+	height: 600px;
+	width: 150.83px;
+	z-index: 1;
+	overflow: hidden;
+	opacity: .8;
+}
+
+#vector-image img:nth-last-child(2) {
+	position: absolute;
+	right: 0px;
+	bottom: -220px;
+	overflow: hidden;
+	opacity: .8;
+	transform: rotate(90deg);
+}
