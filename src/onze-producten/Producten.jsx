@@ -23,7 +23,7 @@ const Producten = () => {
         subheader='Wat brengt de komende jaren voor webontwikkeling?'
         text='Bij Nexa zijn we altijd op zoek naar de nieuwste trends en ontwikkelingen in webontwikkeling. De technologische wereld evolueert voortdurend, en het is onze missie om onze klanten voorop te laten lopen en hen te voorzien van cutting-edge oplossingen.'
         btnTxt='read more'
-        pic='../../src/assets/img1.png'
+        pic='https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400'
       />
     </div>
   );

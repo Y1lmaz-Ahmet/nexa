@@ -2,6 +2,7 @@ import React from "react";
 import "animate.css";
 import "./ReferenceStyles.css";
 import { motion } from "framer-motion";
+import ScrollCarousel from "scroll-carousel";
 const Reference = () => {
   return (
     <motion.div
@@ -12,7 +13,10 @@ const Reference = () => {
       transition={{ delay: 0.4 }}
     >
       <div className='reference-left-grid'>
-        <img src='../../src/assets/personImg.png' alt='reference' />
+        <img
+          src='https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=400'
+          alt='reference'
+        />
       </div>
       <div className='reference-right-grid'>
         <div className='reference-headers'>
