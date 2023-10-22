@@ -87,12 +87,13 @@ ul.navigation-wrapper {
 		border-bottom-right-radius: 0px;
 		border-bottom-left-radius: 0px;
 		box-shadow: 3px -2px 5px gray;
+
 	}
 
 	.hidden-nav {
 		display: none;
-		visibility: hidden;
 	}
+
 
 	nav h1 {
 		font-size: 15px;
