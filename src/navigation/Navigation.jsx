@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <nav className='navigation-container'>
       <img src='/ahmet.svg' alt='mijn logo' id='website-logo' />
-      <h1>Nexa</h1>
+      <h1 className="hidden-nav">Nexa</h1>
       <ul className='navigation-wrapper'>
         <li>
           <Link to='welcome' smooth={true} duration={500}>

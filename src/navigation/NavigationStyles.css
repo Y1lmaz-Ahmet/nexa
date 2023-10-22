@@ -81,7 +81,7 @@ ul.navigation-wrapper {
 		bottom: 0;
 		width: 100%;
 		height: 45px;
-		gap: 35px;
+		gap: 5px;
 		border-top-right-radius: 6px;
 		border-top-left-radius: 6px;
 		border-bottom-right-radius: 0px;
@@ -89,10 +89,15 @@ ul.navigation-wrapper {
 		box-shadow: 3px -2px 5px gray;
 	}
 
+	.hidden-nav {
+		display: none;
+		visibility: hidden;
+	}
+
 	nav h1 {
-		font-size: 24px;
+		font-size: 15px;
 		flex-grow: 0;
-		margin-left: 10px;
+		margin-left: 0px;
 	}
 
 	nav img {
