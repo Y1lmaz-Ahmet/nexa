@@ -12,7 +12,7 @@ html {
 
 ::-webkit-scrollbar {
 	display: flex;
-	width: 25px;
+	width: 15px;
 	background: #26A4BF;
 
 }
